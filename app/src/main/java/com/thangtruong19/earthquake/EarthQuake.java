@@ -5,17 +5,17 @@ package com.thangtruong19.earthquake;
  */
 
 public class EarthQuake {
-    private String mMagnitude;
+    private Double mMagnitude;
     private String mLocation;
     private Long mDate;
 
-    public EarthQuake(String mMagnitude,String mLocation,Long mDate) {
+    public EarthQuake(Double mMagnitude,String mLocation,Long mDate) {
         this.mMagnitude = mMagnitude;
         this.mLocation=mLocation;
         this.mDate=mDate;
     }
 
-    public String getmMagnitude() {
+    public Double getmMagnitude() {
         return mMagnitude;
     }
 

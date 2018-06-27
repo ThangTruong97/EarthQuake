@@ -63,7 +63,7 @@ public final class QueryUtils {
                 //get "properties" json object
                 JSONObject properties=currentObject.getJSONObject("properties");
                 //get a key from json object
-                String magnitude=properties.getString("mag");
+                Double magnitude=properties.getDouble("mag");
                 String location =properties.getString("place");
                 long time=properties.getLong("time");
                 //get a date object in order to pass in SimpleDateFormat's format method
