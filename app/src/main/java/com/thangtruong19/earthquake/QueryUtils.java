@@ -6,7 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by User on 19/06/2018.
@@ -50,12 +52,30 @@ public final class QueryUtils {
 
             // TODO: Parse the response given by the SAMPLE_JSON_RESPONSE string and
             // build up a list of Earthquake objects with the corresponding data.
+            //convert a json response into json object
             JSONObject object=new JSONObject(SAMPLE_JSON_RESPONSE);
+            //get a json array from a json object
             JSONArray array=object.getJSONArray("features");
+
             for(int i=0;i<array.length();i++){
+                //get a json object at the position i of json array
                 JSONObject currentObject=array.getJSONObject(i);
+                //get "properties" json object
                 JSONObject properties=currentObject.getJSONObject("properties");
-                
+                //get a key from json object
+                String magnitude=properties.getString("mag");
+                String location =properties.getString("place");
+                long time=properties.getLong("time");
+                //get a date object in order to pass in SimpleDateFormat's format method
+                Date dateObject=new Date(time);
+                //create SimpleDateFormat object
+                SimpleDateFormat dateFormatter=new SimpleDateFormat("MMM DD, yyyy");
+                //return a date with the format that has been set
+                String dateToDisplay=dateFormatter.format(dateObject);
+                //create earthquake object from the keys that we got
+                EarthQuake newEarthQuake=new EarthQuake(magnitude,location,time);
+                //add this object into the array
+                earthquakes.add(newEarthQuake);
             }
 
         } catch (JSONException e) {

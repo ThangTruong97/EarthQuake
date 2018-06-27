@@ -7,9 +7,9 @@ package com.thangtruong19.earthquake;
 public class EarthQuake {
     private String mMagnitude;
     private String mLocation;
-    private String mDate;
+    private Long mDate;
 
-    public EarthQuake(String mMagnitude,String mLocation,String mDate) {
+    public EarthQuake(String mMagnitude,String mLocation,Long mDate) {
         this.mMagnitude = mMagnitude;
         this.mLocation=mLocation;
         this.mDate=mDate;
@@ -23,7 +23,7 @@ public class EarthQuake {
         return mLocation;
     }
 
-    public String getmDate() {
+    public Long getmDate() {
         return mDate;
     }
 }
