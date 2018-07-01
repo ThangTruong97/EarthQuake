@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.thangtruong19.earthquake.MainActivity"
-    android:id="@+id/list">
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:id="@+id/list"
+
+    >
 
 </ListView>
