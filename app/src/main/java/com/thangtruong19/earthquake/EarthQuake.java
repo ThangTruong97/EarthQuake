@@ -8,11 +8,13 @@ public class EarthQuake {
     private Double mMagnitude;
     private String mLocation;
     private Long mDate;
+    private String mUrl;
 
-    public EarthQuake(Double mMagnitude,String mLocation,Long mDate) {
+    public EarthQuake(Double mMagnitude,String mLocation,Long mDate,String url) {
         this.mMagnitude = mMagnitude;
         this.mLocation=mLocation;
         this.mDate=mDate;
+        this.mUrl=url;
     }
 
     public Double getmMagnitude() {
@@ -26,4 +28,6 @@ public class EarthQuake {
     public Long getmDate() {
         return mDate;
     }
+
+    public String getmUrl(){return mUrl;}
 }
